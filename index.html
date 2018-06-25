@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array Katas</title>
+</head>
+
+<body>
+    <script>
+        const gotCitiesCSV = "King's Landing,Braavos,Volantis,Old Valyria,Free Cities,Qarth,Meereen";
+        const lotrCitiesArray = ["Mordor", "Gondor", "Rohan", "Beleriand", "Mirkwood", "Dead Marshes", "Rhun", "Harad"];
+        const bestThing = "The best thing about a boolean is even if you are wrong you are only off by a bit"
+
+        // Display an array with the cities in gotCitiesCSV//  
+        var gotarray = gotCitiesCSV.split(',');
+        var got = document.createElement("p");
+        got.textContent = JSON.stringify(gotarray);
+        document.body.appendChild(got);
+
+        //Display an array of words from the sentence in bestThing// 
+        var bestarray = bestThing.split(' ');
+        var best = document.createElement("p");
+        best.textContent = JSON.stringify(bestarray);
+        document.body.appendChild(best);
+
+        //Display a string separated by semi-colons instead of commas from gotCitiesCSV// 
+        var semiarray = gotCitiesCSV.split(',');
+        var semistring = semiarray.join(';');
+        var semi = document.createElement("p");
+        semi.textContent = JSON.stringify(semistring);
+        document.body.appendChild(semi);
+
+        //Display a CSV (comma-separated) string from the lotrCitiesArray//
+        var lotrstring = lotrCitiesArray.join(', ');
+        var lotrs = document.createElement("p");
+        lotrs.textContent = JSON.stringify(lotrstring);
+        document.body.appendChild(lotrs);
+
+        //Display the last 5 cities in lotrCitiesArray// 
+        var lotr5 = lotrCitiesArray.slice(3);
+        var lotr5array = document.createElement("p");
+        lotr5array.textContent = JSON.stringify(lotr5);
+        document.body.appendChild(lotr5array);
+
+        //Using splice, remove "Rohan" from lotrCitiesArray//
+        lotrCitiesArray.splice(2, 1);
+        var lotrCitiesArraysansRohanarray = document.createElement("p");
+        lotrCitiesArraysansRohanarray.textContent = JSON.stringify(lotrCitiesArray);
+        document.body.appendChild(lotrCitiesArraysansRohanarray);
+
+        //Using slice, display characters between the 23rd and 38th position of bestThing (i.e., "boolean is even"//
+        var best23 = bestThing.slice(23, 38);
+        var best38 = document.createElement("p");
+        best38.textContent= JSON.stringify(best23);
+        document.body.appendChild(best38);
+
+        //Find and display the index of "only" in bestThing//
+        var indexonly = bestThing.indexOf("only");
+        var indexonlydisplay = document.createElement("p");
+        indexonlydisplay.textContent= JSON.stringify(indexonly); 
+        document.body.appendChild(indexonlydisplay);
+
+        //Find and display all cities from gotCitiesCSV  that use double vowels ("aa","ee", etc.)//
+        var gotcitiesarray = gotCitiesCSV.split(',');
+        var gotcitiesvowels = document.createElement("p");
+        gotcitiesvowels.textContent = JSON.stringify(gotcitiesarray);
+        document.body.appendChild(gotcitiesvowels);
+
+        //Sort lotrCitiesArray by the number of characters in each city (i.e., shortest city names go first)//
+        var lotrletters = lotrCitiesArray.sort(function(a, b){return b-a})
+        var lotrlettersarray = document.createElement("p")
+        lotrlettersarray.textContent = JSON.stringify(lotrletters);
+        document.body.appendChild(lotrlettersarray);
+    </script>
+
+
+</body>
+
+</html>
